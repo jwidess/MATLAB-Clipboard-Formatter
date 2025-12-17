@@ -9,3 +9,7 @@ If you'd like to change the pasted **font size** or **line height** they can eas
 ## Formatting Example:
 To the left is pasting straight from MATLAB to OneNote, the right is using this script to paste. 
 ![Example of Formatting](example.png)
+
+
+## Credit:
+Credit to SKAN from the AHK forum for the `SetClipboardHTML` function: https://www.autohotkey.com/boards/viewtopic.php?t=80706
