@@ -6,6 +6,10 @@ MsgBox("`nPress F2 to fix and paste.", "MATLAB Formatter", 64)
 ; Main Hotkey F2
 F2::
 {
+    ; --- Config ---
+    fontSize := "8pt"    ; Font size for pasted text
+    lineHeight := "6pt"  ; Line height for pasted text
+
     ; Get HTML from Clipboard
     fullHtml := GetClipboardHTML()
     if (fullHtml = "")
@@ -35,7 +39,7 @@ F2::
     bodyContent := RegExReplace(bodyContent, 'i)<br\s*/?>', '')
     
     ; Define styles
-    forcedStyles := "font-size: 8pt; line-height: 6pt; margin: 0; padding: 0;"
+    forcedStyles := "font-size: " . fontSize . "; line-height: " . lineHeight . "; margin: 0; padding: 0;"
     
     ; Define quotes
     q := Chr(34)  ; Double Quote (")
@@ -57,7 +61,7 @@ F2::
     
     ; Find <span ...></span> with nothing inside
     emptySpanNeedle := "i)<span[^>]*>\s*</span>"
-    ; Replace with a span containing a space, styled to 6pt
+    ; Replace with a span containing a space, styled to lineHeight
     filledSpanReplacement := "<span style=" . q . forcedStyles . q . ">&nbsp;</span>"
     
     bodyContent := RegExReplace(bodyContent, emptySpanNeedle, filledSpanReplacement)
