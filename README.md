@@ -13,3 +13,5 @@ To the left is pasting straight from MATLAB to OneNote, the right is using this 
 
 ## Credit:
 Credit to SKAN from the AHK forum for the `SetClipboardHTML` function: https://www.autohotkey.com/boards/viewtopic.php?t=80706
+
+**NOTE**: This AHK script was primarily written with the help of Gemini 3 Pro.
